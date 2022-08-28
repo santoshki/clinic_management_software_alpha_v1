@@ -1,36 +1,61 @@
+<form action="/patient_data_recorded" method="post">
 <link rel="stylesheet" href="{{ url_for('static', filename= 'css/patient_entry_form_style.css') }}">
-<head>
-    <meta charset="UTF-8">
-    <title>Patient Entry form</title>
-    <h1>Patient entry form</h1>
-    <div class="container_topbar">
-        <label>Date</label> <br>
-        <input type="date" id="date" name="date"/>
-        <label>Clinic Name</label>
-        <input type="text" id="cnc_name" name="clinic_name"/> <br>
-    </div>
-    <div class="container_middlebar">
-        <label>Patient Details</label>
-        <label>Emergency Contact details</label> <br>
-        <label>First Name</label>
-        <input type="text" id="first_name" name="first_name"/>
-        <label>Name</label>
-        <input type="text" id="emg_name" name="emergency_name"/> <br>
-        <label>Middle Name</label>
-        <input type="text" id="middle_name" name="middle_name"/>
-        <label>Contact Number</label>
-        <input type="contact_number" id="contact_num" name="emg_contact_num" min="1" max="10"/> <br>
-        <label>Last Name</label>
-        <input type="text" id="lastname" name="last_name">
-        <label>Email id</label> <br>
-        <input type="text" id="email_id" name="Email_id"/> <br>
-        <label>Contact number</label>
-        <input type="number" id="contact_number" name="contact_number" min="1" max="10"/> <br>
-        <label>Unique </label>
-    </div>
-
-</head>
 <body>
-
+    <head>
+        <meta charset="UTF-8">
+        <title>Patient Entry form</title>
+        <h1>Patient entry form</h1>
+        <div class="container_default_section">
+            <label>Date</label> <br>
+            <input type="date" id="date" name="date"/>
+            <label>Clinic Name</label>
+            <input type="text" id="cnc_name" name="clinic_name"/> <br>
+        </div>
+        <div class="container_patient_details_section">
+            <label>Patient Details</label> <br> <br>
+            <label>Emergency Contact details</label> <br>
+            <label>First Name</label>
+            <input type="text" id="first_name" name="first_name"/>
+            <label>Name</label>
+            <input type="text" id="emg_name" name="emergency_name"/> <br>
+            <label>Middle Name</label>
+            <input type="text" id="middle_name" name="middle_name"/>
+            <label>Contact Number</label>
+            <input type="contact_number" id="contact_num" name="emg_contact_num" min="1" max="10"/> <br>
+            <label>Last Name</label>
+            <input type="text" id="lastname" name="last_name">
+            <label>Email id</label>
+            <input type="text" id="email_id" name="Email_id"/> <br>
+            <label>Contact number</label>
+            <input type="number" id="contact_number" name="contact_number" min="1" max="10"/> <br>
+            <label>Unique Identification Number</label>
+            <input type="text" id="unid"  name="Unique_identification_number"/>
+        </div>
+        <div class="container_patient_location_section">
+            <label>Location details</label> <br> <br>
+            <label>City/Town</label>
+            <input type="text" id="city_town" name="City_Town"/> <br>
+            <label>State</label>
+            <input type="text" id="state" name="State"/> <br>
+            <label>Postal Address</label>
+            <input type="text" id="postal_address" name="Postal_Address"/> <br>
+            <label>Pin Code</label>
+            <input type="number" id="pin_code" name="Pin_Code"/>
+        </div>
+        <div class="container_doctor_physician_details_section">
+            <label>Name</label>
+            <select id="doctors" name="doctors">
+                <option value="doctor1">Doctor 1</option>
+                <option value="doctor2">Doctor 2</option>
+                <option value="doctor3">Doctor 3</option>
+                <option value="doctor4">Doctor 4</option>
+            </select> <br>
+            <label>Visit Number</label>
+            <input type="number" id="visit_number" name="Visit_Number"/> <br>
+            <label>Time</label>
+            <input type="time" id="visit_time" name="Visit_Time"/>
+        </div>
+    </head>
 </body>
 </html>
+</form>
