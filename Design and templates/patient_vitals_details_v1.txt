@@ -1,0 +1,11 @@
+Patient vital details:
+
+Patient Name:				Doctor Name:
+
+Measured values				Normal Range		Status
+BP:
+Pulse rate:
+Oxygen level:
+Temperature:
+Height:
+Weight:

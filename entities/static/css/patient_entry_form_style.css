@@ -8,7 +8,7 @@ body {
 
 .container_default_section {
     position: relative;
-    width: 600px;
+    width: 800px;
     height: 150px;
     border-radius: 20px;
     padding: 40px;
@@ -20,8 +20,8 @@ body {
 
 .container_patient_details_section {
     position: relative;
-    width: 600px;
-    height: 400px;
+    width: 800px;
+    height: 600px;
     border-radius: 20px;
     padding: 40px;
     margin-bottom:20px;
@@ -33,7 +33,7 @@ body {
 .container_patient_location_section {
     position: relative;
     width: 600px;
-    height: 250px;
+    height: 550px;
     border-radius: 20px;
     padding: 40px;
     margin-bottom:20px;
@@ -45,11 +45,29 @@ body {
 .container_doctor_physician_details_section {
     position: relative;
     width: 600px;
-    height: 180px;
+    height: 350px;
     border-radius: 20px;
     padding: 40px;
     margin-bottom:20px;
     box-sizing: border-box;
     background: #ecf0f3;
     box-shadow: 14px 14px 20px #cbced1, -14px -14px 20px white;
+}
+
+input {
+  display: in-line;
+  background: #ecf0f3;
+  padding: 10px;
+  padding-left: 40px;
+  height: 50px;
+  font-size: 14px;
+  border-radius: 50px;
+  box-shadow: inset 6px 6px 6px #cbced1, inset -6px -6px 6px white;
+}
+
+label {
+  display: in-line;
+  width: 200px;
+  margin-bottom: 4px;
+  box-sizing: border-box;
 }
