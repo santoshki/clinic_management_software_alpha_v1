@@ -1,0 +1,19 @@
+<form action="/test" method="post">
+<link rel="stylesheet" href="{{ url_for('static', filename= 'css/test.css') }}">
+<div id="wrapper">
+  <div class="location-container dark">
+    <div class="container--header">
+      <h3 id="location--header" class="">Select <span>City</span></h3>
+      <div class="drop-arrow"><span class="arrow-icon"><i class="material-icons">expand_more</i></span></div>
+    </div>
+    <div class="location location--selected"><p>Toronto</p></div>
+    <div class="location location--selected" ><p>Sydney</p></div>
+  </div>
+  <div id="light-dark-mode">
+    <label class="switch">
+      <input id="switchBox" type="checkbox">
+      <span class="slider round"></span>
+    </label>
+  </div>
+</div>
+</form>

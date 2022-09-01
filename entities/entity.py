@@ -1,7 +1,11 @@
-import flask
-from flask import request, render_template, Flask
+from flask import render_template, Flask
 
 app = Flask(__name__)
+
+
+@app.route('/login/', methods=['GET', 'POST'])
+def login():
+    return render_template('login_form.html')
 
 
 @app.route('/patient_entry_form', methods=['GET', 'POST'])
