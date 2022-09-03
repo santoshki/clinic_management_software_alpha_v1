@@ -14,13 +14,22 @@ def db_insert(patient_data):
         cursor.execute(''' SELECT count(name) FROM sqlite_master WHERE type='table' AND name='patient_entry_data' ''')
         if cursor.fetchone()[0] == 0:
             table_create = """CREATE TABLE patient_entry_data(FIRSTNAME TEXT, MIDDLENAME TEXT, LASTNAME TEXT, EMERGENCYCONTACTNAME TEXT,
-                            EMERGENCYCONTACTNUMBER TEXT, EMERGENCYCONTACTEMAILID TEXT)"""
+                            EMERGENCYCONTACTNUMBER TEXT, EMERGENCYCONTACTEMAILID TEXT, PATIENTGENDER TEXT, PATIENTAGE TEXT, HEALTHISSUE TEXT, 
+                            PATIENTEMAILID TEXT, PATIENTCONTACTNUMBER TEXT, PATIENTUNIQUEIDENTIFICATIONNUMBER TEXT, PATIENTIENTCITYTOWN TEXT, 
+                            PATIENTSTATE TEXT, PATIENTPOSTALADDRESS TEXT, PATIENTPINCODE TEXT, DOCTORPHYSICIANNAME TEXT, PATIENTVISITNUMBER TEXT,
+                            PATIENTVISITTIME TEXT)"""
             cursor.execute(table_create)
             conn.commit()
             print("Table created in SQLlite DB.")
 
-        cursor.execute("INSERT INTO patient_entry_data(FIRSTNAME, MIDDLENAME, LASTNAME, EMERGENCYCONTACTNAME, EMERGENCYCONTACTNUMBER, EMERGENCYCONTACTEMAILID) VALUES (?,?,?,?,?,?)",
-                       (patient_data[0], patient_data[1], patient_data[2], patient_data[3], patient_data[4], patient_data[5]))
+        cursor.execute("INSERT INTO patient_entry_data(FIRSTNAME, MIDDLENAME, LASTNAME, EMERGENCYCONTACTNAME, EMERGENCYCONTACTNUMBER, "
+                       "EMERGENCYCONTACTEMAILID,  PATIENTGENDER, PATIENTAGE, HEALTHISSUE, PATIENTEMAILID, PATIENTCONTACTNUMBER, PATIENTUNIQUEIDENTIFICATIONNUMBER,"
+                       "PATIENTIENTCITYTOWN, PATIENTSTATE, PATIENTPOSTALADDRESS, PATIENTPINCODE, DOCTORPHYSICIANNAME, PATIENTVISITNUMBER,"
+                       "PATIENTVISITTIME) "
+                       "VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",
+                       (patient_data[0], patient_data[1], patient_data[2], patient_data[3], patient_data[4], patient_data[5], patient_data[6],
+                        patient_data[7], patient_data[8], patient_data[9], patient_data[10], patient_data[11], patient_data[12], patient_data[13],
+                        patient_data[14], patient_data[15], patient_data[16], patient_data[17], patient_data[18]))
         conn.commit()
         print("Data inserted in SQL lite db")
         return 1
