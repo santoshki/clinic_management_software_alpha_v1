@@ -23,7 +23,7 @@ def patient_data_recorded():
         try:
             form_data = request.form
             patient_entry_form_data = entity_parser.entry_data_parser(form_data)
-            db_entity.db_insert(patient_entry_form_data)
+            db_entity.db_insert_entry_data(patient_entry_form_data)
             return "Patient data recorded successfully."
         except Exception as e:
             print("Exception occurred:", e)
