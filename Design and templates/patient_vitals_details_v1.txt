@@ -1,6 +1,6 @@
 Patient vital details:
 
-Patient Name:				Doctor Name:
+Patient Name:				Doctor/Physician Name:
 
 Measured values				Normal Range		Status
 BP:

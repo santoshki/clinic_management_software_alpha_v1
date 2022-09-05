@@ -1,0 +1,33 @@
+<form action="/patient_vitals_recorded" method="post">
+<link rel="stylesheet" href="{{ url_for('static', filename= 'css/patient_vitals_form_style.css')}}">
+<body>
+  <head>
+    <meta charset="UTF-8">
+    <title>Patient Vitals</title>
+    <h1>Patient Vitals Form</h1>
+    <div class="container_default_section">
+      <label>Patient Name</label>
+      <input type="text" id="patient_name" name="patient_name"/>
+      <label>Doctor/Physician Name</label>
+      <input type="text" id="doctor_physician_name" name="doctor_physician_name"/>
+    </div>
+    <div class="container_vitals_values_section">
+      <label>Measured values</label>
+      <label>Normal range</label>
+      <label>Status</label> <br> <br>
+      <label>Blood Pressure</label>
+      <input type="text" id="bp_measured_value" name="bp_measured_value"/>
+      <label>mmhg</label>
+      <input type="text" id="bp_normal_range_value" name="bp_normal_range_value"/>
+      <label>mmhg</label>
+      <input type="text" id="bp_status_value" name="bp_status_value"/> <br> <br>
+      <label>Pulse rate</label>
+      <input type="text" id="pulse_rate_normal_range_value" name="pulse_rate_normal_range_value"/>
+      <label>bpm</label>
+      <input type="text" id="pulse_rate_measured_value" name="pulse_rate_measured_value"/>
+      <label>bpm</label>
+      <input type="text" id="pulse_rate_status" name="pulse_rate_status"/>
+    </div>
+ </head>
+</body>
+</form>
