@@ -23,13 +23,24 @@ def patient_vitals_data():
 @app.route('/patient_data_recorded/', methods=['GET', 'POST'])
 def patient_data_recorded():
     if request.method == "POST":
-        patient_entry_form_data = []
-
         try:
-            form_data = request.form
-            patient_entry_form_data = entity_parser.entry_data_parser(form_data)
+            entry_form_data = request.form
+            patient_entry_form_data = entity_parser.entry_data_parser(entry_form_data)
             db_entity.db_insert_entry_data(patient_entry_form_data)
             return "Patient data recorded successfully."
+        except Exception as e:
+            print("Exception occurred:", e)
+            return "Exception occurred."
+
+
+@app.route('/patient_vitals_recorded', methods=['GET', 'POST'])
+def patient_vitals_recorded():
+    if request.method == "POST":
+        try:
+            vitals_form_data = request.form
+            patient_vitals_form_data = entity_parser.patient_vitals_data_parser(vitals_form_data)
+            db_entity.db_insert_vitals(patient_vitals_form_data)
+            return "Patient vitals data recorded successfully."
         except Exception as e:
             print("Exception occurred:", e)
             return "Exception occurred."
