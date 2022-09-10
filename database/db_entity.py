@@ -17,7 +17,7 @@ def db_insert_entry_data(patient_data):
                             EMERGENCYCONTACTNUMBER TEXT, EMERGENCYCONTACTEMAILID TEXT, PATIENTGENDER TEXT, PATIENTAGE TEXT, HEALTHISSUE TEXT, 
                             PATIENTEMAILID TEXT, PATIENTCONTACTNUMBER TEXT, PATIENTUNIQUEIDENTIFICATIONNUMBER TEXT, PATIENTIENTCITYTOWN TEXT, 
                             PATIENTSTATE TEXT, PATIENTPOSTALADDRESS TEXT, PATIENTPINCODE TEXT, DOCTORPHYSICIANNAME TEXT, 
-                            PATIENTVISITNUMBER TEXT, PATIENTVISITTIME TEXT)"""
+                            PATIENTVISITNUMBER TEXT, PATIENTVISITTIME TEXT, PATIENTREGID TEXT)"""
             cursor.execute(table_create)
             conn.commit()
             print("Table created in SQLlite DB.")
@@ -26,13 +26,13 @@ def db_insert_entry_data(patient_data):
             "INSERT INTO patient_entry_data(FIRSTNAME, MIDDLENAME, LASTNAME, EMERGENCYCONTACTNAME, EMERGENCYCONTACTNUMBER, "
             "EMERGENCYCONTACTEMAILID,  PATIENTGENDER, PATIENTAGE, HEALTHISSUE, PATIENTEMAILID, PATIENTCONTACTNUMBER, "
             "PATIENTUNIQUEIDENTIFICATIONNUMBER," "PATIENTIENTCITYTOWN, PATIENTSTATE, PATIENTPOSTALADDRESS, PATIENTPINCODE, "
-            "DOCTORPHYSICIANNAME, PATIENTVISITNUMBER," "PATIENTVISITTIME) "
-            "VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",
+            "DOCTORPHYSICIANNAME, PATIENTVISITNUMBER," "PATIENTVISITTIME, PATIENTREGID) "
+            "VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",
             (patient_data[0], patient_data[1], patient_data[2], patient_data[3], patient_data[4], patient_data[5],
              patient_data[6],
              patient_data[7], patient_data[8], patient_data[9], patient_data[10], patient_data[11], patient_data[12],
              patient_data[13],
-             patient_data[14], patient_data[15], patient_data[16], patient_data[17], patient_data[18]))
+             patient_data[14], patient_data[15], patient_data[16], patient_data[17], patient_data[18], patient_data[19]))
         conn.commit()
         print("Data inserted in SQL lite db")
         return 1

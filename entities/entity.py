@@ -1,4 +1,4 @@
-from flask import render_template, Flask, request
+from flask import render_template, Flask, request, flash
 from database import db_entity
 from data_parser import entity_parser
 
@@ -17,6 +17,7 @@ def patient_entry_form():
 
 @app.route('/patient_vitals_data/', methods=['GET', 'POST'])
 def patient_vitals_data():
+
     return render_template('patient_vitals_form.html')
 
 
@@ -24,6 +25,7 @@ def patient_vitals_data():
 def patient_data_recorded():
     if request.method == "POST":
         try:
+
             entry_form_data = request.form
             patient_entry_form_data = entity_parser.entry_data_parser(entry_form_data)
             db_entity.db_insert_entry_data(patient_entry_form_data)
@@ -67,4 +69,4 @@ def patient_vitals_recorded():
 
 
 if __name__ == '__main__':
-    app.run(host='localhost', port=5000, debug=True)
+    app.run(host='localhost', port=5000)
