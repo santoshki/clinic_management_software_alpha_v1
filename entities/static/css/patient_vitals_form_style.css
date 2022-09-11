@@ -10,7 +10,7 @@ body {
 
 .container_default_section {
     position: relative;
-    width: 850px;
+    width: 1300px;
     height: 150px;
     border-radius: 20px;
     padding: 40px;
@@ -23,7 +23,7 @@ body {
 .container_vitals_values_section {
     position: relative;
     width: 1300px;
-    height: 775px;
+    height: 680px;
     border-radius: 20px;
     padding: 40px;
     margin-bottom:20px;
@@ -57,7 +57,7 @@ label {
 }
 
 button {
-  display: flex;
+  display: inline-block;
   margin-top: 20px;
   background: #1DA1F2;
   height: 55px;
