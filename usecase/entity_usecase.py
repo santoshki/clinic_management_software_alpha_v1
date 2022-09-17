@@ -15,3 +15,17 @@ def patient_id_generator(patient_firstname, patient_middlename, patient_lastname
     patient_reg_id = id_first_seq + id_second_seq + id_third_seq + id_last_seq
     print("Generated patient registration id:", patient_reg_id)
     return patient_reg_id
+
+
+def get_normal_range_values(patient_age):
+    try:
+        if int(patient_age) > 0:
+            print("Gathering normal range vital details for the specified age group....")
+            if int(patient_age) < 3:
+                return
+        else:
+            print("Invalid age number")
+            return -1
+    except Exception as e:
+        print("Exception occurred:", e)
+        return "Exception occurred"

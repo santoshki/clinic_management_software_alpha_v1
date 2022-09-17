@@ -1,9 +1,9 @@
 Patient vital details:
 
-Patient Name:				Doctor/Physician Name:
+Patient Name:				Doctor/Physician Name:                  Patient Age:
 
-Measured values				Normal Range		Status
-BP:
+                    Measured values				Normal Range		Status
+BP:                                                120/80
 Pulse rate:
 Oxygen level:
 Temperature:
