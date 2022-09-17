@@ -10,6 +10,11 @@ def login():
     return render_template('login_form.html')
 
 
+@app.route('/homepage', methods=['GET', 'POST'])
+def homepage():
+    return render_template('homepage_form.html')
+
+
 @app.route('/patient_entry_form/', methods=['GET', 'POST'])
 def patient_entry_form():
     return render_template('patient_entry_form.html')
@@ -17,7 +22,6 @@ def patient_entry_form():
 
 @app.route('/patient_vitals_data/', methods=['GET', 'POST'])
 def patient_vitals_data():
-
     return render_template('patient_vitals_form.html')
 
 
@@ -29,7 +33,9 @@ def patient_data_recorded():
             entry_form_data = request.form
             patient_entry_form_data = entity_parser.entry_data_parser(entry_form_data)
             db_entity.db_insert_entry_data(patient_entry_form_data)
-            return "Patient data recorded successfully."
+            patient_name = patient_entry_form_data[0] + " " + patient_entry_form_data[1] + " " + patient_entry_form_data[2]
+            return render_template('patient_vitals_form.html', patient_name=patient_name, patient_age=patient_entry_form_data[7],
+                                   doctor_physician_name=patient_entry_form_data[16])
         except Exception as e:
             print("Exception occurred:", e)
             return "Exception occurred."
