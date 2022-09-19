@@ -22,6 +22,11 @@ def get_normal_range_values(patient_age):
         if int(patient_age) > 0:
             print("Gathering normal range vital details for the specified age group....")
             if int(patient_age) < 3:
+                max_bp_normal_range_value = 105
+                min_bp_normal_range_value = 66
+                max_pulse_range = 130
+                min_pulse_range = 80
+                oxygen_level_normal_range = 100
                 return
         else:
             print("Invalid age number")
