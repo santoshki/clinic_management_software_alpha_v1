@@ -1,2 +1,9 @@
-normal_values:
-  bp_value:
+BP range:
+  gender: men
+  age:
+    value: 20-25
+    systolic: 120.5
+    diastolic: 78.5
+
+
+
