@@ -7,22 +7,38 @@ def parse_normal_values():
         doc = yaml.load(f, Loader=yaml.FullLoader)
     #print(doc)
     gender_value = "Male"
-    age = "24"
+    age = "37"
     bp_range = doc["BP range"]
     gender = bp_range["gender"]
-    for g in gender:
-        if gender_value == str(g):
-            print(g)
+    for i in range(0, len(gender)):
+        if gender_value == str(gender[i]):
+            gender_index = i
     ages = bp_range["age"]
-    for ag in ages:
+    if gender_index == 0:
+        value_low_index = 5
+        value_high_index = 13
+    else:
+        value_low_index = 14
+        value_high_index = 22
+
+    for j in range(0, len(ages)):
+        ag = str(ages[j])
+        low = ag[:2]
+        high = ag[-2:]
+        if int(low) <= int(age) <= int(high):
+            value_index = j
+            print(j)
+    '''for ag in ages:
         ag = str(ag)
         low = ag[:2]
         high = ag[-2:]
         if int(low) <= int(age) <= int(high):
-            print(ag)
+            print(ag)'''
     age_group = age[0]
-    value = bp_range["value"]
-    print(age_group, value[5])
+    values = bp_range["value"]
+    print("value_low_index:", value_low_index)
+    value = values[value_low_index + value_index -5]
+    print(age_group, value)
 
 
 if __name__ == '__main__':
