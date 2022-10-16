@@ -1,13 +1,13 @@
 import sqlite3
 
 
-def fetch_all_data(db_name):
+def fetch_all_data(dbname):
     try:
-        conn = sqlite3.connect(db_name)
+        conn = sqlite3.connect(dbname)
         cursor = conn.cursor()
-        if db_name == "patient_entry_data.db":
-           cursor.execute("""SELECT * from patient_entry_data""")
-        elif db_name == "patients_vitals_data.db":
+        if dbname == "patient_entry_data.db":
+            cursor.execute("""SELECT * from patient_entry_data""")
+        elif dbname == "patients_vitals_data.db":
             cursor.execute("""SELECT * from patients_vitals_data""")
         result = cursor.fetchall();
         print("Data stored in db:", result)
@@ -31,5 +31,5 @@ def fetch_data_health_issue(query):
 
 
 if __name__ == '__main__':
-    db_name = "patient_entry_data.db"
-    fetch_all_data(db_name)
+    dbname = "patient_entry_data.db"
+    fetch_all_data(dbname)
