@@ -68,9 +68,8 @@ def patient_record_data_parser(vitals_form_data):
         temperature_measured_value = vitals_form_data["temperature_measured_value"]
         height_measured_value = vitals_form_data["height_measured_value"]
         weight_measured_value = vitals_form_data["weight_measured_value"]
-        parsed_records_data.extend(
-            (patient_name, bp_measured_value, pulse_rate_measured_value, oxygen_level_measured_value, temperature_measured_value,
-             height_measured_value, weight_measured_value))
+        parsed_records_data.extend((patient_name, bp_measured_value, pulse_rate_measured_value, oxygen_level_measured_value,
+                                    temperature_measured_value, height_measured_value, weight_measured_value))
         return parsed_records_data
     except Exception as e:
         print("Exception occurred:", e)
