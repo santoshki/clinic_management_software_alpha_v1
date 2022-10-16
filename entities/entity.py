@@ -56,8 +56,12 @@ def patient_vitals_recorded():
                 print("Save and submit button pressed.")
                 print("Capturing patient vitals data")
                 vitals_form_data = request.form
-                patient_vitals_form_data = entity_parser.patient_vitals_data_parser(vitals_form_data)
-                db_entity.db_insert_vitals(patient_vitals_form_data)
+                patient_record_data = entity_parser.patient_record_data_parser(vitals_form_data)
+                patient_entry_record = entity_parser.entry_data_parser()
+                patient_record_id = entity_usecase.patient_id_generator(entity_parser)
+                print(patient_record_data)
+                #patient_vitals_form_data = entity_parser.patient_vitals_data_parser(vitals_form_data)
+                #db_entity.db_insert_vitals(patient_vitals_form_data)
                 print("Patient vitals data recorded successfully.")
                 return "Patient vitals data recorded successfully."
             elif back_button_pressed is not None:
