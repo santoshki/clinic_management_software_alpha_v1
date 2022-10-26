@@ -59,8 +59,11 @@ def patient_vitals_recorded():
                 patient_vitals_status = entity_values.patient_vitals_status(patient_record_data)
                 print("Patient vitals status:", patient_vitals_status)
                 print("Patient vitals data recorded successfully.")
-                return render_template('patient_record_form.html', bp_status=patient_vitals_status[0], pulse_rate_status=patient_vitals_status[1],
-                                       oxygen_level_status=patient_vitals_status[2], temperature_status=patient_vitals_status[3])
+                return render_template('patient_record_form.html', bp_measured_value=patient_record_data[1], pulse_rate_measured_value=patient_record_data[2],
+                                       oxygen_level_measured_value=patient_record_data[3], temperature_measured_value=patient_record_data[4],
+                                       height_measured_value=patient_record_data[5], weight_measured_value=patient_record_data[6],
+                                       bp_status=patient_vitals_status[0], pulse_rate_status=patient_vitals_status[1], oxygen_level_status=patient_vitals_status[2],
+                                       temperature_status=patient_vitals_status[3])
             elif back_button_pressed is not None:
                 print("Back button pressed.")
                 print("Reloading patient entry form...")

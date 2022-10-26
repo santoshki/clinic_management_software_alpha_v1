@@ -1,5 +1,5 @@
 <form action="/patient_vitals_recorded" method="post">
-<link rel="stylesheet" href="{{ url_for('static', filename= 'css/patient_record_form_style.css')}}">
+<link rel="stylesheet" href="{{ url_for('static', filename= 'css/patient_record_form_styles.css')}}">
 <head>
     <meta charset="UTF-8">
     <title>Patient Record form</title>
@@ -20,33 +20,35 @@
       <label></label>
       <label>Status</label> <br> <br>
       <label>Blood Pressure</label>
-      <input type="text" id="bp_measured_value" name="bp_measured_value"/>
+      <input type="text" id="bp_measured_value" name="bp_measured_value" value="{{bp_measured_value}}"/>
       <label>mmhg</label>
       <input type="text" id="bp_normal_range_value" name="bp_normal_range_value" value="120/80"/>
       <label>mmhg</label>
       <input type="text" id="bp_status_value" name="bp_status_value" value="{{bp_status}}"/> <br> <br>
       <label>Pulse rate</label>
-      <input type="text" id="pulse_rate_measured_value" name="pulse_rate_measured_value"/>
+      <input type="text" id="pulse_rate_measured_value" name="pulse_rate_measured_value" value="{{pulse_rate_measured_value}}"/>
       <label>bpm</label>
       <input type="text" id="pulse_rate_normal_range_value" name="pulse_rate_normal_range_value" value="60-100"/>
       <label>bpm</label>
       <input type="text" id="pulse_rate_status" name="pulse_rate_status" value="{{pulse_rate_status}}"/> <br> <br>
       <label>Oxygen levels</label>
-      <input type="text" id="oxygen_levels_measured_value" name="oxygen_levels_measured_value"/>
+      <input type="text" id="oxygen_levels_measured_value" name="oxygen_levels_measured_value" value="{{oxygen_level_measured_value}}"/>
       <label>mm Hg</label>
       <input type="text" id="oxygen_levels_normal_value" name="oxygen_levels_normal_value" value="95-100"/>
       <label>mm Hg</label>
       <input type="text" id="oxygen_levels_status" name="oxygen_levels_status" value="{{oxygen_level_status}}"/> <br> <br>
       <label>Temperature</label>
-      <input type="text" id="temperature_measured_value" name="temperature_measured_value"/>
+      <input type="text" id="temperature_measured_value" name="temperature_measured_value" value="{{temperature_measured_value}}"/>
       <label>degree celsius</label>
       <input type="text" id="temperature_normal_value" name="temperature_normal_value" value="36-37"/>
       <label>degree celsius</label>
       <input type="text" id="temperature_status" name="temperature_status_value" value="{{temperature_status}}"/> <br> <br>
       <label>Height</label>
-      <input type="number" id="height_measured_value" name="height_measured_value"/> <br> <br>
+      <input type="number" id="height_measured_value" name="height_measured_value" value="{{height_measured_value}}"/>
+      <label>cm</label> <br> <br>
       <label>Weight</label>
-      <input type="number" id="weight_measured_value" name="weight_measured_value"/> <br> <br>
+      <input type="number" id="weight_measured_value" name="weight_measured_value" value="{{weight_measured_value}}"/>
+      <label>kg</label> <br> <br>
       <button type="submit" name="save_submit_button" value="save_submit">Save & Submit</button>
       <label></label>
       <button type="submit" name="back_button" value="back">Back</button>
