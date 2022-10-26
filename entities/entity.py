@@ -30,7 +30,6 @@ def patient_vitals_data():
 def patient_data_recorded():
     if request.method == "POST":
         try:
-
             entry_form_data = request.form
             patient_entry_form_data = entity_parser.entry_data_parser(entry_form_data)
             db_entity.db_insert_entry_data(patient_entry_form_data)
@@ -40,7 +39,7 @@ def patient_data_recorded():
             return render_template('patient_vitals_form.html', patient_name=patient_name, patient_age=patient_entry_form_data[7],
                                    doctor_physician_name=patient_entry_form_data[16])
         except Exception as e:
-            print("Exception occurred:", e)
+            print("Exception occurred while recording patient's data:", e)
             return "Exception occurred."
 
 
@@ -57,14 +56,11 @@ def patient_vitals_recorded():
                 print("Capturing patient vitals data")
                 vitals_form_data = request.form
                 patient_record_data = entity_parser.patient_record_data_parser(vitals_form_data)
-                #patient_entry_record = entity_parser.entry_data_parser()
-                #patient_record_id = entity_usecase.patient_id_generator(entity_parser)
-                print(patient_record_data)
                 patient_vitals_status = entity_values.patient_vitals_status(patient_record_data)
-                #patient_vitals_form_data = entity_parser.patient_vitals_data_parser(vitals_form_data)
-                #db_entity.db_insert_vitals(patient_vitals_form_data)
+                print("Patient vitals status:", patient_vitals_status)
                 print("Patient vitals data recorded successfully.")
-                return render_template('patient_record_form.html')
+                return render_template('patient_record_form.html', bp_status=patient_vitals_status[0], pulse_rate_status=patient_vitals_status[1],
+                                       oxygen_level_status=patient_vitals_status[2], temperature_status=patient_vitals_status[3])
             elif back_button_pressed is not None:
                 print("Back button pressed.")
                 print("Reloading patient entry form...")
@@ -78,7 +74,7 @@ def patient_vitals_recorded():
                 print("Resetting form values")
                 return render_template('patient_vitals_form.html')
         except Exception as e:
-            print("Exception occurred:", e)
+            print("Exception occurred while recording vitals details:", e)
             return "Exception occurred."
 
 
